@@ -1,0 +1,26 @@
+@model BaiTuan3.Models.Todo
+
+@{
+    ViewData["Title"] = "Xoá công việc";
+}
+
+<div class="exercise-header">
+    <h2 class="exercise-title">BÀI TẬP VẬN DỤNG 2</h2>
+    <p>Xây dựng ứng dụng TodoList với các chức năng: Xem danh sách, chi tiết, thêm, sửa, xoá</p>
+</div>
+
+<h1 class="task-title">Xoá công việc</h1>
+
+<p style="color: red;">Bạn có chắc chắn muốn xoá công việc này?</p>
+
+<div style="border: 1px solid #ccc; padding: 20px; width: 400px;">
+    <p><strong>Mã công việc:</strong> @Model.Id</p>
+    <p><strong>Tên công việc:</strong> @Model.Title</p>
+</div>
+
+<br />
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" style="background-color: red; color: white; border: none; padding: 5px 15px; cursor: pointer;">Xoá</button>
+    <a asp-action="Index" style="margin-left: 10px;">Quay trở lại</a>
+</form>

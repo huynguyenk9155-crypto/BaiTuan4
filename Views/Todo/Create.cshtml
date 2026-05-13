@@ -1,0 +1,33 @@
+@model BaiTuan3.Models.Todo
+
+@{
+    ViewData["Title"] = "Thêm mới công việc";
+}
+
+<div class="exercise-header">
+    <h2 class="exercise-title">BÀI TẬP VẬN DỤNG 2</h2>
+    <p>Xây dựng ứng dụng TodoList với các chức năng: Xem danh sách, chi tiết, thêm, sửa, xoá</p>
+</div>
+
+<h1 class="task-title">Thêm mới công việc</h1>
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label>Mã công việc</label><br />
+        <input type="text" disabled placeholder="Tự động tạo" />
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="Title">Tên công việc</label><br />
+        <input asp-for="Title" style="width: 300px;" />
+    </div>
+    
+    <div class="mb-3">
+        <input type="checkbox" asp-for="IsCompleted" />
+        <label asp-for="IsCompleted">Trạng thái hoàn thành</label>
+    </div>
+
+    <button type="submit" style="background-color: #007bff; color: white; border: none; padding: 5px 15px; cursor: pointer;">Tạo mới</button>
+    <br /><br />
+    <a asp-action="Index">Quay trở lại</a>
+</form>

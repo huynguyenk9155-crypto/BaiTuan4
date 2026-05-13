@@ -1,0 +1,22 @@
+@model BaiTuan3.Models.Todo
+
+@{
+    ViewData["Title"] = "Chi tiết công việc";
+}
+
+<div class="exercise-header">
+    <h2 class="exercise-title">BÀI TẬP VẬN DỤNG 2</h2>
+    <p>Xây dựng ứng dụng TodoList với các chức năng: Xem danh sách, chi tiết, thêm, sửa, xoá</p>
+</div>
+
+<h1 class="task-title">Chi tiết công việc</h1>
+
+<div style="border: 1px solid #ccc; padding: 20px; width: 400px;">
+    <p><strong>Mã công việc:</strong> @Model.Id</p>
+    <p><strong>Tên công việc:</strong> @Model.Title</p>
+    <p><strong>Trạng thái:</strong> @(Model.IsCompleted ? "Hoàn thành" : "Chưa hoàn thành")</p>
+</div>
+
+<br />
+<a asp-action="Edit" asp-route-id="@Model.Id">Sửa</a> |
+<a asp-action="Index">Quay trở lại</a>
